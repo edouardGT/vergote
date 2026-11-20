@@ -29,6 +29,13 @@ SPRIG = ('<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
          '<path d="M12.4 13.5C9 13.6 6.6 11.6 6 8.4 9.4 8.3 11.8 10.3 12.4 13.5Z" fill="currentColor"/>'
          '<path d="M13.6 9.6C14 6.5 16.4 4.4 19.6 4 19.3 7.2 16.9 9.3 13.6 9.6Z" fill="currentColor"/></svg>')
 
+# Logo sprig with two tiny seasonal extras, shown only when site.js sets <html data-seizoen="kerst|nieuwjaar">.
+BRAND_SPRIG = SPRIG.replace(
+    "</svg>",
+    '<g class="season season--kerst"><circle cx="13.1" cy="15.3" r="1.55" fill="#B8332A"/><circle cx="11.2" cy="16.6" r="1.55" fill="#B8332A"/></g>'
+    '<g class="season season--nieuwjaar"><path d="M19.6 12.4l.75 1.85 1.85.75-1.85.75-.75 1.85-.75-1.85-1.85-.75 1.85-.75z" fill="#D4A445"/></g></svg>',
+)
+
 
 def icon(name):
     return (f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
@@ -79,7 +86,7 @@ def header(current, over):
     return f"""<a class="skip-link" href="#inhoud">Naar de inhoud</a>
 <header class="{cls}">
   <div class="wrap header-inner">
-    <a class="brand" href="./">{SPRIG}<span>Tuinen Vergote</span></a>
+    <a class="brand" href="./">{BRAND_SPRIG}<span>Tuinen Vergote</span></a>
     <nav class="site-nav" aria-label="Hoofdmenu">
       <button class="menu-button" type="button" popovertarget="site-menu" popovertargetaction="toggle" aria-controls="site-menu">{icon("menu")}<span>Menu</span></button>
       <ul id="site-menu" class="site-menu" popover="auto">
@@ -97,6 +104,7 @@ FOOTER = f"""<footer class="site-footer">
       <div>
         <p class="footer-name">Tuinen Vergote</p>
         <p>Tuinaanleg en tuinonderhoud in Gits en omgeving.</p>
+        <p class="season-greeting" hidden></p>
       </div>
       <div>
         <h2>Contact</h2>

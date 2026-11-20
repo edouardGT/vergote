@@ -64,3 +64,30 @@
   var year = document.getElementById('jaar');
   if (year) year.textContent = String(new Date().getFullYear());
 })();
+
+// Seasonal touch, automatic on the visitor's date (no deploy needed):
+//   7–26 December: two holly berries on the logo + a Christmas greeting in the footer.
+//   27 December – 15 January: a small gold star on the logo + a New Year greeting.
+// Preview with ?seizoen=kerst, ?seizoen=nieuwjaar or ?seizoen=geen.
+(function () {
+  var now = new Date();
+  var month = now.getMonth(); // 0 = January, 11 = December
+  var day = now.getDate();
+  var season = null;
+  if (month === 11 && day >= 7 && day <= 26) season = 'kerst';
+  else if ((month === 11 && day >= 27) || (month === 0 && day <= 15)) season = 'nieuwjaar';
+
+  var forced = new URLSearchParams(window.location.search).get('seizoen');
+  if (forced === 'kerst' || forced === 'nieuwjaar') season = forced;
+  if (forced === 'geen') season = null;
+  if (!season) return;
+
+  document.documentElement.setAttribute('data-seizoen', season);
+  var greeting = document.querySelector('.season-greeting');
+  if (!greeting) return;
+  var newYear = month === 0 ? now.getFullYear() : now.getFullYear() + 1; // in January it's this year's
+  greeting.textContent = season === 'kerst'
+    ? 'Mathieu wenst u fijne feestdagen.'
+    : 'Gelukkig nieuwjaar! Mathieu wenst u een groen en gezond ' + newYear + '.';
+  greeting.hidden = false;
+})();

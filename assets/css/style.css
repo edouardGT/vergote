@@ -577,6 +577,19 @@ a { color: inherit; }
 .gallery img { inline-size: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; }
 .gallery figcaption { font-size: 1rem; color: var(--muted); margin-block-start: 0.5rem; }
 
+/* ---------- Seasonal touch (set by site.js on the visitor's date) ---------- */
+.season { display: none; }
+[data-seizoen="kerst"] .season--kerst,
+[data-seizoen="nieuwjaar"] .season--nieuwjaar { display: inline; }
+.season-greeting {
+  margin-block-start: 1.25rem;
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100;
+  font-weight: 360;
+  font-size: 1.2rem;
+  color: var(--wit);
+}
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--mos-diep); color: var(--voet); padding-block: 4rem 2rem; font-size: 1rem; --focus: var(--wit); }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2.5rem; }

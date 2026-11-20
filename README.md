@@ -52,6 +52,13 @@ The photos in `assets/img/photos/` are free Unsplash photos (Unsplash License: f
 - **Saffron facts** (picked by hand in October, about 300 flowers per gram, the field in the Amersveldestraat, son Juliaan) come from a post in the Facebook group "Gits aan de Spits 2.0" (9 Oct 2025), rewritten in our own words.
 
 
+## Seasonal touch (automatic, every year)
+
+Set by `assets/js/site.js` on the visitor's date; no deploy needed.
+- **7–26 December:** two small red holly berries on the logo sprig, and "Mathieu wenst u fijne feestdagen." in the footer.
+- **27 December – 15 January:** a small gold star on the logo, and "Gelukkig nieuwjaar! Mathieu wenst u een groen en gezond <year>." (the year fills itself in).
+- Preview at any time with `?seizoen=kerst`, `?seizoen=nieuwjaar` or `?seizoen=geen`.
+
 ## Preview locally
 
 ```sh
