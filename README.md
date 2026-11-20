@@ -29,7 +29,7 @@ The feel is an early morning in a natural garden: lots of space, a slow rhythm, 
 
 ## Photos (temporary mood photos)
 
-The photos in `assets/img/photos/` are free Unsplash photos (Unsplash License: free for commercial use, no attribution required). They set the mood only and are **not Mathieu's work**; `privacy.html` says so. Replace them with Mathieu's own photos when he has them. The Realisaties page deliberately has no stock photos.
+The photos in `assets/img/photos/` are free Unsplash photos (Unsplash License: free for commercial use, no attribution required). They set the mood only and are **not Mathieu's work**; the footer of every page credits them as "Sfeerfoto's: Unsplash". Replace them with Mathieu's own photos when he has them. The Realisaties page deliberately has no stock photos.
 
 | File | Photographer | Unsplash |
 |---|---|---|
@@ -68,7 +68,7 @@ These sentences were written as a proposal, not taken from his invoices:
 - [ ] "eenmalig of op regelmatige basis" (tuinonderhoud).
 - [ ] "Mathieu denkt mee" and "Hij bekijkt graag wat er mogelijk is".
 - [ ] "zijn eigen saffraan" (saffraan, home).
-- [ ] The privacy statement as a whole: Mathieu is the controller, so he must agree with it.
+- [ ] The privacy statement (short version since 2026-11-20, GDPR art. 13 essentials only). Mathieu is the controller, so he must agree with it.
 
 The facts come from his invoices: trading name, address, phone number, VAT number, and the services billed (hedge trimming, tree sawing, green-zone maintenance, green waste removal, private and business customers).
 
