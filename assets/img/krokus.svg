@@ -1,18 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200">
-  <defs>
-    <g id="k">
-      <path d="M0 0V-38" stroke="#4E8A5B" stroke-width="4" stroke-linecap="round" fill="none"/>
-      <path d="M-2 0C-8-12-10-24-14-34" stroke="#4E8A5B" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M2 0C8-12 10-24 14-34" stroke="#4E8A5B" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M0-36C-15-42-16-64 0-74C16-64 15-42 0-36Z" fill="#7B5BB0"/>
-      <path d="M0-37C-20-41-24-60-12-68C-8-55-5-46 0-37Z" fill="#5B3F8C"/>
-      <path d="M0-37C20-41 24-60 12-68C8-55 5-46 0-37Z" fill="#5B3F8C"/>
-      <path d="M0-46L-4-63M0-46V-66M0-46L4-63" stroke="#C2410C" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-    </g>
-  </defs>
-  <circle cx="100" cy="104" r="92" fill="#FFFFFF" opacity=".7"/>
-  <ellipse cx="100" cy="170" rx="70" ry="12" fill="#C9DCC3"/>
-  <use xlink:href="#k" href="#k" transform="translate(100 172) scale(1.7)"/>
-  <use xlink:href="#k" href="#k" transform="translate(56 174) scale(1.05)"/>
-  <use xlink:href="#k" href="#k" transform="translate(146 176) scale(1.15)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300">
+  <g transform="translate(180 290) scale(1.9)"><path d="M0 0V-70" stroke="#9BCB6B" stroke-width="5" stroke-linecap="round"/><path d="M-3 0C-10-20-14-44-22-62M3 0C10-20 14-44 22-62" fill="none" stroke="#9BCB6B" stroke-width="3.5" stroke-linecap="round"/><path d="M0-66C-22-74-24-112 0-128C24-112 22-74 0-66Z" fill="#D9C8F7"/><path d="M0-68C-30-74-38-106-20-120C-14-98-8-84 0-68Z" fill="#B79BEA"/><path d="M0-68C30-74 38-106 20-120C14-98 8-84 0-68Z" fill="#B79BEA"/><path d="M0-84L-8-118M0-84V-122M0-84L8-118" stroke="#E0481C" stroke-width="4" stroke-linecap="round"/></g>
+  <g transform="translate(78 292) scale(1.15)"><path d="M0 0V-70" stroke="#9BCB6B" stroke-width="5" stroke-linecap="round"/><path d="M-3 0C-10-20-14-44-22-62M3 0C10-20 14-44 22-62" fill="none" stroke="#9BCB6B" stroke-width="3.5" stroke-linecap="round"/><path d="M0-66C-22-74-24-112 0-128C24-112 22-74 0-66Z" fill="#D9C8F7"/><path d="M0-68C-30-74-38-106-20-120C-14-98-8-84 0-68Z" fill="#B79BEA"/><path d="M0-68C30-74 38-106 20-120C14-98 8-84 0-68Z" fill="#B79BEA"/><path d="M0-84L-8-118M0-84V-122M0-84L8-118" stroke="#E0481C" stroke-width="4" stroke-linecap="round"/></g>
+  <g transform="translate(282 294) scale(1.3)"><path d="M0 0V-70" stroke="#9BCB6B" stroke-width="5" stroke-linecap="round"/><path d="M-3 0C-10-20-14-44-22-62M3 0C10-20 14-44 22-62" fill="none" stroke="#9BCB6B" stroke-width="3.5" stroke-linecap="round"/><path d="M0-66C-22-74-24-112 0-128C24-112 22-74 0-66Z" fill="#D9C8F7"/><path d="M0-68C-30-74-38-106-20-120C-14-98-8-84 0-68Z" fill="#B79BEA"/><path d="M0-68C30-74 38-106 20-120C14-98 8-84 0-68Z" fill="#B79BEA"/><path d="M0-84L-8-118M0-84V-122M0-84L8-118" stroke="#E0481C" stroke-width="4" stroke-linecap="round"/></g>
 </svg>

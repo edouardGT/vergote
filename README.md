@@ -18,6 +18,16 @@ Plain HTML + CSS, no build step, served by GitHub Pages. Text is in Dutch.
 Shared style: `assets/css/style.css`. Menu script: `assets/js/site.js`. Images: `assets/img/`.
 The header and footer are repeated in every page, so a change there means editing all 8 files.
 
+## Design
+
+The idea is a clipped hedge: crisp, blocky, freshly trimmed.
+
+- **Colours:** hedge green `#1B4330`, fresh shoots `#C6E37A`, white, mist `#EAF0E6`. Crocus violet `#5B3A9E` and saffron red `#E0481C` appear only around the saffron.
+- **Type:** one family, Bricolage Grotesque. Headings are heavy and condensed, body text is regular width. The font is self-hosted in `assets/fonts/` under the SIL Open Font License (`OFL.txt` must stay next to it).
+- **Illustrations:** `hedgerow.svg` is a row of pollarded willows (knotwilgen), box hedges, topiary and crocuses. On the home page it is revealed once, like a trimmer pass, and not at all for visitors who prefer reduced motion. Also `krokus.svg`, the `mark.svg` logo and the favicon.
+- **Menu:** a native popover that collapses only when the links don't fit; older browsers fall back to a simple toggle.
+- **Avoided on purpose:** cream background with a serif and terracotta, identical cards with shadows, ALL-CAPS labels, "·" separators and "→" on links.
+
 ## Preview locally
 
 ```sh
