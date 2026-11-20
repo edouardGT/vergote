@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+# Build scripts and project notes are public files but not pages.
+Disallow: /tools/
+Disallow: /README.md
 
-Sitemap: https://tuinenvergotemathieu.be/sitemap.xml
+Sitemap: https://www.tuinenvergotemathieu.be/sitemap.xml

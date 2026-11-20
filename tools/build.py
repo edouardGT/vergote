@@ -7,7 +7,7 @@ import sys
 OUT = pathlib.Path(sys.argv[1])
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from tuinjaar_data import SAFFRAAN_NU, SEIZOENEN, TUINJAAR  # noqa: E402
-SITE = "https://tuinenvergotemathieu.be"
+SITE = "https://www.tuinenvergotemathieu.be"  # main address; the bare domain redirects here (GitHub Pages, CNAME)
 PHONE_TXT = "0477 47 90 73"
 PHONE_TEL = "+32477479073"
 EMAIL = "info@tuinenvergotemathieu.be"
@@ -686,5 +686,29 @@ for a, b in [('href="assets/', 'href="/assets/'), ('src="assets/', 'src="/assets
 for href, _ in NAV + [("privacy.html", ""), ("tuinjaar.html", "")]:
     t = t.replace(f'href="{href}"', f'href="/{href}"')
 p404.write_text(t, encoding="utf-8")
+
+
+
+# ---------- sitemap.xml + robots.txt (same main address as the pages) ----------
+SITEMAP_PAGES = ["index.html", "tuinaanleg.html", "tuinonderhoud.html", "realisaties.html", "saffraan.html",
+                 "recepten.html", "tuinjaar.html", "contact.html", "privacy.html"]
+(OUT / "sitemap.xml").write_text(
+    '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    + "".join(f"  <url><loc>{SITE}/{'' if p == 'index.html' else p}</loc></url>\n" for p in SITEMAP_PAGES)
+    + "</urlset>\n",
+    encoding="utf-8",
+)
+(OUT / "robots.txt").write_text(
+    "User-agent: *\n"
+    "Allow: /\n"
+    "# Build scripts and project notes are public files but not pages.\n"
+    "Disallow: /tools/\n"
+    "Disallow: /README.md\n"
+    "\n"
+    f"Sitemap: {SITE}/sitemap.xml\n",
+    encoding="utf-8",
+)
+(OUT / "CNAME").write_text(SITE.removeprefix("https://") + "\n", encoding="utf-8")
+
 
 print("written:", sorted(p.name for p in OUT.glob("*.html")))
