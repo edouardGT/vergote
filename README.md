@@ -20,13 +20,27 @@ The header and footer are repeated in every page, so a change there means editin
 
 ## Design
 
-The idea is a clipped hedge: crisp, blocky, freshly trimmed.
+The feel is an early morning in a natural garden: lots of space, a slow rhythm, soft light. The look was inspired by the photo-led layout of tuinenvanlerberghe.be, made calmer: no pop-ups, no cookie banner, more space.
 
-- **Colours:** hedge green `#1B4330`, fresh shoots `#C6E37A`, white, mist `#EAF0E6`. Crocus violet `#5B3A9E` and saffron red `#E0481C` appear only around the saffron.
-- **Type:** one family, Bricolage Grotesque. Headings are heavy and condensed, body text is regular width. The font is self-hosted in `assets/fonts/` under the SIL Open Font License (`OFL.txt` must stay next to it).
-- **Illustrations:** `hedgerow.svg` is a row of pollarded willows (knotwilgen), box hedges, topiary and crocuses. On the home page it is revealed once, like a trimmer pass, and not at all for visitors who prefer reduced motion. Also `krokus.svg`, the `mark.svg` logo and the favicon.
+- **Colours:** dew `#F7F8F4` (page), sage `#E4EADF`, moss `#3E5641` / `#2B3B2D`, saffron gold `#9A6F22` (underlines, numerals), crocus `#6E5A9B` (saffron only).
+- **Type:** Fraunces (soft, light) for headings and Figtree for text. Both are self-hosted in `assets/fonts/` under the SIL Open Font License; the `OFL-*.txt` files must stay next to them.
+- **Motion:** only the home photo settles slowly on load, and not at all for visitors who prefer reduced motion.
 - **Menu:** a native popover that collapses only when the links don't fit; older browsers fall back to a simple toggle.
-- **Avoided on purpose:** cream background with a serif and terracotta, identical cards with shadows, ALL-CAPS labels, "·" separators and "→" on links.
+
+## Photos (temporary mood photos)
+
+The photos in `assets/img/photos/` are free Unsplash photos (Unsplash License: free for commercial use, no attribution required). They set the mood only and are **not Mathieu's work**; `privacy.html` says so. Replace them with Mathieu's own photos when he has them. The Realisaties page deliberately has no stock photos.
+
+| File | Photographer | Unsplash |
+|---|---|---|
+| `tuin-grassen-*` (home) | Tatyana Rubleva | https://unsplash.com/photos/nOCFJqFK4f4 |
+| `bank-tussen-gras-*` (home band) | wen qiao | https://unsplash.com/photos/zDNB0mOaZ2s |
+| `handen-planten-*` | Jonathan Kemper | https://unsplash.com/photos/4z3lnwEvZQw |
+| `haag-*` | Haberdoedas II | https://unsplash.com/photos/G0H2TJW3wm0 |
+| `saffraankrokus-*` | Mohammad Amiri | https://unsplash.com/photos/6aNGn5Ykkh8 |
+| `saffraan-bloemen-*` | Mohammad Amiri | https://unsplash.com/photos/oUAuc3a0Xoc |
+| `grassen-wind-*` | Benjamin Cheng | https://unsplash.com/photos/bxU2um8kUec |
+| `border-vaste-planten-*` | T (@tanyabarrow) | https://unsplash.com/photos/vC-j7Vy3blU |
 
 ## Preview locally
 
