@@ -66,8 +66,8 @@
 })();
 
 // Seasonal touch, automatic on the visitor's date (no deploy needed):
-//   7–26 December: two holly berries on the logo + a Christmas greeting in the footer.
-//   27 December – 15 January: a small gold star on the logo + a New Year greeting.
+//   7–26 December: holly berries on the logo, a small pill above the home headline, a footer greeting.
+//   27 December – 15 January: a gold star on the logo, a New Year pill and footer greeting.
 // Preview with ?seizoen=kerst, ?seizoen=nieuwjaar or ?seizoen=geen.
 (function () {
   var now = new Date();
@@ -83,11 +83,18 @@
   if (!season) return;
 
   document.documentElement.setAttribute('data-seizoen', season);
-  var greeting = document.querySelector('.season-greeting');
-  if (!greeting) return;
   var newYear = month === 0 ? now.getFullYear() : now.getFullYear() + 1; // in January it's this year's
-  greeting.textContent = season === 'kerst'
-    ? 'Mathieu wenst u fijne feestdagen.'
-    : 'Gelukkig nieuwjaar! Mathieu wenst u een groen en gezond ' + newYear + '.';
-  greeting.hidden = false;
+
+  var pill = document.querySelector('.season-pill'); // home page only
+  if (pill) {
+    pill.querySelector('span').textContent = season === 'kerst' ? 'Fijne feestdagen' : 'Gelukkig nieuwjaar';
+    pill.hidden = false;
+  }
+  var greeting = document.querySelector('.season-greeting'); // footer, every page
+  if (greeting) {
+    greeting.textContent = season === 'kerst'
+      ? 'Mathieu wenst u fijne feestdagen.'
+      : 'Gelukkig nieuwjaar! Mathieu wenst u een groen en gezond ' + newYear + '.';
+    greeting.hidden = false;
+  }
 })();

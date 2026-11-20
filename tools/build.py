@@ -32,8 +32,19 @@ SPRIG = ('<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
 # Logo sprig with two tiny seasonal extras, shown only when site.js sets <html data-seizoen="kerst|nieuwjaar">.
 BRAND_SPRIG = SPRIG.replace(
     "</svg>",
-    '<g class="season season--kerst"><circle cx="13.1" cy="15.3" r="1.55" fill="#B8332A"/><circle cx="11.2" cy="16.6" r="1.55" fill="#B8332A"/></g>'
-    '<g class="season season--nieuwjaar"><path d="M19.6 12.4l.75 1.85 1.85.75-1.85.75-.75 1.85-.75-1.85-1.85-.75 1.85-.75z" fill="#D4A445"/></g></svg>',
+    '<g class="season season--kerst" fill="#C2352B"><circle cx="13.4" cy="15.4" r="2.1"/><circle cx="10.5" cy="16.6" r="2.1"/><circle cx="12.6" cy="18.9" r="2.1"/></g>'
+    '<g class="season season--nieuwjaar"><path d="M19.4 10.6l1.05 2.6 2.6 1.05-2.6 1.05-1.05 2.6-1.05-2.6-2.6-1.05 2.6-1.05z" fill="#E0B354"/></g></svg>',
+)
+
+SEASON_PILL = (
+    '<p class="season-pill" hidden>'
+    '<svg class="season season--kerst" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+    '<path d="M2.5 12.5c2.3-3.2 5.6-4.2 9.3-2.9-1.3 3.4-4.6 4.7-9.3 2.9z" fill="currentColor"/>'
+    '<path d="M21.5 12.5c-2.3-3.2-5.6-4.2-9.3-2.9 1.3 3.4 4.6 4.7 9.3 2.9z" fill="currentColor"/>'
+    '<g fill="#D9473A"><circle cx="12" cy="12.6" r="2.3"/><circle cx="9.6" cy="15" r="2.1"/><circle cx="14.4" cy="15" r="2.1"/></g></svg>'
+    '<svg class="season season--nieuwjaar" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+    '<path d="M12 2.5l2.2 6.3 6.3 2.2-6.3 2.2L12 19.5l-2.2-6.3L3.5 11l6.3-2.2z" fill="#E7BE5E"/></svg>'
+    '<span></span></p>'
 )
 
 
@@ -225,6 +236,7 @@ jsonld = {
 home = f"""<section class="photo-hero hero">
   {photo("tuin-grassen", lazy=False, priority=True)}
   <div class="wrap">
+    {SEASON_PILL}
     <h1>Een tuin om in tot rust te komen</h1>
     <p>Mathieu Vergote legt tuinen aan en onderhoudt ze, voor particulieren en bedrijven in Gits en omgeving.</p>
     <div class="actions">

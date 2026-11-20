@@ -581,6 +581,24 @@ a { color: inherit; }
 .season { display: none; }
 [data-seizoen="kerst"] .season--kerst,
 [data-seizoen="nieuwjaar"] .season--nieuwjaar { display: inline; }
+.season-pill:not([hidden]) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem;
+  padding: 0.4rem 1rem 0.4rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: var(--wit);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.season-pill svg { inline-size: 1.35rem; block-size: 1.35rem; }
+[data-seizoen="kerst"] .season-pill .season--kerst,
+[data-seizoen="nieuwjaar"] .season-pill .season--nieuwjaar { display: block; }
 .season-greeting {
   margin-block-start: 1.25rem;
   font-family: var(--serif);
