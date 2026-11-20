@@ -46,7 +46,7 @@ The photos in `assets/img/photos/` are free Unsplash photos (Unsplash License: f
 
 ## Saffron: Facebook and recipes
 
-- **Facebook:** the saffraan and recepten pages have a "Volg de saffraan op Facebook" button linking to the saffron page "De afspanning" (Gits): https://www.facebook.com/profile.php?id=61563440602293
+- **Facebook:** the saffraan and recepten pages have a "Volg De afspanning op Facebook" button linking to the saffron page "De afspanning" (Gits): https://www.facebook.com/profile.php?id=61563440602293
 - **Recipes:** six classic dishes (Italy, Spain, Belgium/France, Iran, Sweden, India), written from scratch for this site. They are not copied from desaffraantuin.be or any other source.
 - **Saffron facts** (picked by hand in October, about 300 flowers per gram, the field in the Amersveldestraat, son Juliaan) come from a post in the Facebook group "Gits aan de Spits 2.0" (9 Oct 2025), rewritten in our own words.
 
