@@ -1,6 +1,6 @@
 # vergote
 
-Website for **Tuinen Vergote Mathieu** (garden design and maintenance, Gits): https://tuinenvergotemathieu.be (not live yet).
+Website for **Tuinen Vergote Mathieu** (garden design and maintenance, Gits): https://tuinenvergotemathieu.be. **Live since 20 November 2026**, published before Mathieu reviewed the text (the owner's decision); see the lists below.
 
 Plain HTML + CSS, no build step, served by GitHub Pages. Text is in Dutch.
 
@@ -72,14 +72,14 @@ These sentences were written as a proposal, not taken from his invoices:
 
 The facts come from his invoices: trading name, address, phone number, VAT number, and the services billed (hedge trimming, tree sawing, green-zone maintenance, green waste removal, private and business customers).
 
-## Go-live checklist
+## Go-live status
 
-1. Mathieu has approved the text.
-2. Make the repo public (GitHub Pages on a free plan needs a public repo).
-3. Settings → Pages: deploy from branch `main`, folder `/`.
-4. Custom domain `tuinenvergotemathieu.be` (this creates a `CNAME` file), then tick **Enforce HTTPS** once the certificate is ready.
-5. DNS zone at OVHcloud: delete the parking `A` records (`213.186.33.5`) for `@` and `www` and the OVH `TXT` records `"1|www…"` / `"3|welcome"`. Add:
-   - `@` A `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - `www` CNAME `edouardgt.github.io.`
-   - Leave the MX and SPF records alone: they carry the info@ mail redirect.
-6. Test `info@tuinenvergotemathieu.be`. It forwards to Mathieu's Telenet address, so warn him first.
+Done on 2026-11-20:
+- Repo made public (GitHub Pages on a free plan needs that), Pages deploys from `main` `/`, custom domain via `CNAME`.
+- OVHcloud DNS zone, edited in text mode: `@` has the 4 GitHub `A` records plus 4 `AAAA` records (`2606:50c0:800[0-3]::153`), `www` is a CNAME to `edouardgt.github.io.`, and the parking A/TXT records are removed. MX, SPF and the `ftp` CNAME are unchanged (the MX and SPF records carry the info@ redirect).
+
+Still open:
+- [ ] **Enforce HTTPS**, once GitHub has issued the certificate.
+- [ ] **Verify the domain** on the GitHub account (Settings → Pages → Add a domain, then a TXT record at OVHcloud). This stops anyone else from claiming it.
+- [ ] Mathieu reviews the text and the privacy statement (lists above).
+- [ ] Test `info@tuinenvergotemathieu.be`. It forwards to Mathieu's Telenet address, so warn him first.
