@@ -1,6 +1,6 @@
 # vergote
 
-Website for **Tuinen Vergote Mathieu** (garden design and maintenance, Gits): https://tuinenvergotemathieu.be. **Live since 20 November 2026**, published before Mathieu reviewed the text (the owner's decision); see the lists below.
+Website for **Tuinen Vergote Mathieu** (garden design and maintenance, Gits): https://www.tuinenvergotemathieu.be. **Live since 20 November 2026**, published before Mathieu reviewed the text (the owner's decision); see the lists below.
 
 Plain HTML + CSS, no build step, served by GitHub Pages. Text is in Dutch.
 
@@ -67,6 +67,10 @@ Set by `assets/js/site.js` on the visitor's date; no deploy needed.
 - **27 December – 15 January:** a gold star on the logo, a pill "Gelukkig nieuwjaar" (star icon) above the home headline, and "Gelukkig nieuwjaar! Mathieu wenst u een groen en gezond <year>." in the footer (the year fills itself in).
 - The user asked for "a very small touch, not a full-blown Christmas site", then "a little more, not too much": keep it at this level.
 - Preview at any time with `?seizoen=kerst`, `?seizoen=nieuwjaar` or `?seizoen=geen`.
+
+## Main address: www
+
+`www.tuinenvergotemathieu.be` is the main address (the user's choice). The bare domain, http and every page path redirect there with a 301. `tools/build.py` holds it in one place, `SITE`, and from it writes the canonical and og:url tags, the JSON-LD, `sitemap.xml`, `robots.txt` and `CNAME`. `robots.txt` blocks `/tools/` and `/README.md`, which are served publicly but are not pages. Changing the custom domain via the API turns off `https_enforced`: switch it back on afterwards.
 
 ## Preview locally
 
