@@ -11,6 +11,7 @@ Plain HTML + CSS, no build step, served by GitHub Pages. Text is in Dutch.
 | Tuinonderhoud | `tuinonderhoud.html` |
 | Realisaties (photos) | `realisaties.html` |
 | Saffraan | `saffraan.html` |
+| Saffron recipes | `recepten.html` |
 | Contact | `contact.html` |
 | Privacy (GDPR) | `privacy.html` |
 | Not found | `404.html` |
@@ -41,6 +42,14 @@ The photos in `assets/img/photos/` are free Unsplash photos (Unsplash License: f
 | `saffraan-bloemen-*` | Mohammad Amiri | https://unsplash.com/photos/oUAuc3a0Xoc |
 | `grassen-wind-*` | Benjamin Cheng | https://unsplash.com/photos/bxU2um8kUec |
 | `border-vaste-planten-*` | T (@tanyabarrow) | https://unsplash.com/photos/vC-j7Vy3blU |
+| `saffraan-draadjes-*` (recipes) | Syed F Hashemi | https://unsplash.com/photos/-zt5GHbljUw |
+
+## Saffron: Facebook and recipes
+
+- **Facebook:** the saffraan and recepten pages have a "Volg de saffraan op Facebook" button. It points to a placeholder, `https://www.facebook.com/#saffraan-pagina-volgt`. When the real page exists, replace that exact string in `saffraan.html` and `recepten.html`.
+- **Recipes:** six classic dishes (Italy, Spain, Belgium/France, Iran, Sweden, India), written from scratch for this site. They are not copied from desaffraantuin.be or any other source.
+- **Saffron facts** (picked by hand in October, about 300 flowers per gram, the field in the Amersveldestraat, son Juliaan) come from a post in the Facebook group "Gits aan de Spits 2.0" (9 Oct 2025), rewritten in our own words.
+
 
 ## Preview locally
 
@@ -67,7 +76,7 @@ These sentences were written as a proposal, not taken from his invoices:
 - [ ] The 4 steps on `tuinaanleg.html`: site visit, proposal with a price, works, maintenance afterwards.
 - [ ] "eenmalig of op regelmatige basis" (tuinonderhoud).
 - [ ] "Mathieu denkt mee" and "Hij bekijkt graag wat er mogelijk is".
-- [ ] "zijn eigen saffraan" (saffraan, home).
+- [ ] The saffron story: Juliaan named on the site, "kweken saffraan op hun veld in de Amersveldestraat" (from the Gits aan de Spits post; ask both of them whether naming Juliaan is fine).
 - [ ] The privacy statement (short version since 2026-11-20, GDPR art. 13 essentials only). Mathieu is the controller, so he must agree with it.
 
 The facts come from his invoices: trading name, address, phone number, VAT number, and the services billed (hedge trimming, tree sawing, green-zone maintenance, green waste removal, private and business customers).
