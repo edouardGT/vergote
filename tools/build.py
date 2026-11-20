@@ -5,6 +5,8 @@ import pathlib
 import sys
 
 OUT = pathlib.Path(sys.argv[1])
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+from tuinjaar_data import SAFFRAAN_NU, SEIZOENEN, TUINJAAR  # noqa: E402
 SITE = "https://tuinenvergotemathieu.be"
 PHONE_TXT = "0477 47 90 73"
 PHONE_TEL = "+32477479073"
@@ -215,6 +217,42 @@ def page_head(h1, lead):
 </section>"""
 
 
+
+
+def tuinjaar_section():
+    """'Nu in de tuin': all 12 months in the HTML (good for search engines and as no-JS fallback);
+    site.js shows only the current month and lets visitors peek at others via the month strip."""
+    maanden = "\n".join(
+        f'''        <article class="maand" id="maand-{i}" data-maand="{i}" data-seizoen="{m['seizoen']}">
+          <p class="maand-label"><span class="maand-naam">{m['maand'].capitalize()}</span> <span class="maand-seizoen">{SEIZOENEN[m['seizoen']].lower()}</span><span class="maand-nu" hidden>nu</span></p>
+          <h3>{m['titel']}</h3>
+          <p>{m['tekst']}</p>
+          <a class="text-link" href="{m['link'][0]}">{m['link'][1]}</a>
+        </article>'''
+        for i, m in enumerate(TUINJAAR)
+    )
+    knoppen = "\n".join(
+        f'        <button type="button" class="maand-knop" data-maand="{i}" data-seizoen="{m["seizoen"]}" aria-controls="maand-{i}" aria-pressed="false" aria-label="{m["maand"].capitalize()}"><span>{m["kort"]}</span></button>'
+        for i, m in enumerate(TUINJAAR)
+    )
+    return f"""<section class="section tuinjaar" id="nu-in-de-tuin" aria-labelledby="tuinjaar-title">
+  <div class="wrap">
+    <div class="tuinjaar-grid">
+      <div class="tuinjaar-intro">
+        <h2 id="tuinjaar-title">Nu in de tuin</h2>
+        <p class="tuinjaar-nu" hidden></p>
+      </div>
+      <div class="tuinjaar-maanden">
+{maanden}
+      </div>
+    </div>
+    <div class="maand-strip" role="group" aria-label="Bekijk een andere maand" hidden>
+{knoppen}
+    </div>
+  </div>
+</section>"""
+
+
 # ---------- home ----------
 jsonld = {
     "@context": "https://schema.org",
@@ -276,6 +314,8 @@ home = f"""<section class="photo-hero hero">
     </article>
   </div>
 </section>
+
+{tuinjaar_section()}
 
 <section class="photo-hero band" aria-labelledby="band-title">
   {photo("bank-tussen-gras")}
@@ -434,6 +474,7 @@ saff = page_hero(
 
 <section class="section">
   <div class="wrap prose">
+    <p class="saffraan-nu" hidden><strong class="saffraan-nu-label"></strong> {"".join(f'<span data-maand="{i}" hidden>{t}</span>' for i, t in enumerate(SAFFRAAN_NU))}</p>
     <h2>Met de hand geplukt</h2>
     <p>De saffraankrokus (<i lang="la">Crocus sativus</i>) bloeit maar één keer per jaar, in oktober. Dan plukken Mathieu en Juliaan elke bloem met de hand. Daarna halen ze uit elke bloem de drie rode draadjes, de stempels, ook met de hand. De draadjes drogen enkele dagen en dan is de saffraan klaar.</p>
     <p>Voor één gram saffraan zijn ongeveer 300 bloemen nodig. Daarom is saffraan een van de duurste specerijen ter wereld, en daarom is een beetje genoeg.</p>
@@ -465,6 +506,7 @@ page(
 # ---------- recepten ----------
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from recepten_data import RECEPTEN, TIPS  # noqa: E402
+from tuinjaar_data import SAFFRAAN_NU, SEIZOENEN, TUINJAAR  # noqa: E402
 
 tips_html = "\n".join(f'      <li><h3>{t}</h3><p>{d}</p></li>' for t, d in TIPS)
 index_html = "\n".join(

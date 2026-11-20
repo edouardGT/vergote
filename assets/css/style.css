@@ -577,6 +577,101 @@ a { color: inherit; }
 .gallery img { inline-size: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; }
 .gallery figcaption { font-size: 1rem; color: var(--muted); margin-block-start: 0.5rem; }
 
+/* ---------- Nu in de tuin (home): the garden year, current month by date ---------- */
+.tuinjaar {
+  --tint: var(--salie);
+  --accent: var(--goud);
+  background-color: var(--tint);
+  transition: background-color 0.8s ease;
+}
+.tuinjaar[data-seizoen-tuin="winter"] { --tint: #E7ECEE; --accent: #4A6371; }
+.tuinjaar[data-seizoen-tuin="lente"]  { --tint: #E4EDDA; --accent: #41693A; }
+.tuinjaar[data-seizoen-tuin="zomer"]  { --tint: #F1EDDA; --accent: #765E19; }
+.tuinjaar[data-seizoen-tuin="herfst"] { --tint: #F1E5D6; --accent: #8F5530; }
+
+.tuinjaar-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: 2rem clamp(2.5rem, 2rem + 4vw, 6rem);
+  align-items: start;
+}
+.tuinjaar-nu { margin-block-start: 1rem; font-size: 1.25rem; color: var(--muted); }
+.maand + .maand { margin-block-start: 3rem; } /* only matters without JS, when all months show */
+.maand-label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.6rem; margin: 0 0 0.6rem; }
+.maand-naam {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 100;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+.maand-seizoen { color: var(--muted); font-size: 1rem; }
+.maand-nu:not([hidden]) {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: var(--mos);
+  color: var(--wit);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.maand h3 { font-size: clamp(1.9rem, 1.4rem + 1.8vw, 2.8rem); margin-block-end: 0.85rem; }
+.maand p { font-size: 1.2rem; max-inline-size: 46ch; }
+
+.maand-strip:not([hidden]) {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.3rem;
+  margin-block-start: clamp(2.5rem, 2rem + 2vw, 4rem);
+}
+.maand-knop {
+  --s: var(--salie-lijn);
+  position: relative;
+  min-block-size: 2.75rem;
+  padding: 0.7rem 0 0.6rem;
+  border: 0;
+  border-block-start: 3px solid var(--s);
+  background: transparent;
+  color: var(--muted);
+  font: 500 0.9375rem/1 var(--sans);
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.maand-knop[data-seizoen="winter"] { --s: #B9C6CD; }
+.maand-knop[data-seizoen="lente"]  { --s: #B7CDA6; }
+.maand-knop[data-seizoen="zomer"]  { --s: #DCCB92; }
+.maand-knop[data-seizoen="herfst"] { --s: #D9B497; }
+.maand-knop:hover { color: var(--mos-diep); }
+.maand-knop[aria-pressed="true"] { color: var(--mos-diep); font-weight: 700; border-block-start-color: var(--mos); }
+.maand-knop.is-nu::after {
+  content: "";
+  position: absolute;
+  inset-block-end: 0.15rem;
+  inset-inline-start: 50%;
+  inline-size: 0.35rem;
+  block-size: 0.35rem;
+  margin-inline-start: -0.175rem;
+  border-radius: 50%;
+  background: var(--mos);
+}
+@media (max-width: 52rem) {
+  .tuinjaar-grid { grid-template-columns: 1fr; }
+  .maand-knop { font-size: 0.8125rem; }
+}
+@media (max-width: 30rem) {
+  .maand-strip:not([hidden]) { gap: 0.15rem; }
+  .maand-knop { font-size: 0.6875rem; letter-spacing: -0.01em; }
+}
+
+/* saffron year line (saffraan page) */
+.saffraan-nu:not([hidden]) {
+  margin-block-end: 2.5rem;
+  padding: 1rem 1.25rem;
+  border-inline-start: 3px solid var(--krokus);
+  border-radius: 0 14px 14px 0;
+  background: var(--salie);
+}
+
 /* ---------- Seasonal touch (set by site.js on the visitor's date) ---------- */
 .season { display: none; }
 [data-seizoen="kerst"] .season--kerst,

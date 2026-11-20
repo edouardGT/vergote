@@ -52,6 +52,13 @@ The photos in `assets/img/photos/` are free Unsplash photos (Unsplash License: f
 - **Saffron facts** (picked by hand in October, about 300 flowers per gram, the field in the Amersveldestraat, son Juliaan) come from a post in the Facebook group "Gits aan de Spits 2.0" (9 Oct 2025), rewritten in our own words.
 
 
+## "Nu in de tuin" (automatic, follows the month)
+
+- **Home page:** a section showing the current month and season. It has a short note on what happens in the garden now, with a link to the matching service. The section's background shifts with the season (winter cool, spring green, summer warm, autumn ochre). A month strip below lets visitors peek at other months; a dot marks today.
+- **Saffraan page:** one line on where the saffron is in its year ("Nu, in oktober: Oogsttijd…").
+- **Content:** `tools/tuinjaar_data.py` (12 notes plus 12 saffron lines). Checked against Flemish/Dutch garden calendars and ANB advice on hedges (not during the breeding season, roughly mid-March to mid-August). Keep each note to a title and at most two sentences.
+- All 12 months are in the HTML (for search engines, and as a fallback without JS); `site.js` shows the current one. Preview with `?maand=1` … `?maand=12`.
+
 ## Seasonal touch (automatic, every year)
 
 Set by `assets/js/site.js` on the visitor's date; no deploy needed.

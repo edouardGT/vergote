@@ -98,3 +98,48 @@
     greeting.hidden = false;
   }
 })();
+
+// "Nu in de tuin" (home) + saffron year line (saffraan page): follow the visitor's month.
+// All 12 months are in the HTML; this shows the current one and lets visitors peek at others.
+// Preview another month with ?maand=1 … ?maand=12.
+(function () {
+  var MONTHS = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli',
+                'augustus', 'september', 'oktober', 'november', 'december'];
+  var current = new Date().getMonth();
+  var forced = parseInt(new URLSearchParams(window.location.search).get('maand'), 10);
+  if (forced >= 1 && forced <= 12) current = forced - 1;
+
+  var section = document.getElementById('nu-in-de-tuin');
+  if (section) {
+    var articles = section.querySelectorAll('.maand');
+    var buttons = section.querySelectorAll('.maand-knop');
+    var show = function (i) {
+      for (var a = 0; a < articles.length; a++) articles[a].hidden = a !== i;
+      for (var b = 0; b < buttons.length; b++) buttons[b].setAttribute('aria-pressed', String(b === i));
+      section.setAttribute('data-seizoen-tuin', articles[i].getAttribute('data-seizoen'));
+    };
+    if (articles.length === 12 && buttons.length === 12) {
+      articles[current].querySelector('.maand-nu').hidden = false;
+      buttons[current].classList.add('is-nu');
+      var nu = section.querySelector('.tuinjaar-nu');
+      nu.textContent = 'Het is ' + MONTHS[current] + ', ' +
+        articles[current].querySelector('.maand-seizoen').textContent + ' in de tuin.';
+      nu.hidden = false;
+      section.querySelector('.maand-strip').hidden = false;
+      for (var k = 0; k < buttons.length; k++) {
+        buttons[k].addEventListener('click', function () { show(Number(this.getAttribute('data-maand'))); });
+      }
+      show(current);
+    }
+  }
+
+  var saffraan = document.querySelector('.saffraan-nu');
+  if (saffraan) {
+    var line = saffraan.querySelector('[data-maand="' + current + '"]');
+    if (line) {
+      line.hidden = false;
+      saffraan.querySelector('.saffraan-nu-label').textContent = 'Nu, in ' + MONTHS[current] + ':';
+      saffraan.hidden = false;
+    }
+  }
+})();
