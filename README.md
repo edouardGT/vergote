@@ -88,7 +88,8 @@ Done on 2026-11-20:
 - OVHcloud DNS zone, edited in text mode: `@` has the 4 GitHub `A` records plus 4 `AAAA` records (`2606:50c0:800[0-3]::153`), `www` is a CNAME to `edouardgt.github.io.`, and the parking A/TXT records are removed. MX, SPF and the `ftp` CNAME are unchanged (the MX and SPF records carry the info@ redirect).
 
 Still open:
-- [ ] **Enforce HTTPS**, once GitHub has issued the certificate.
+- [x] **HTTPS** enforced since 2026-11-20 ~18:05 CET. The certificate (tuinenvergotemathieu.be + www) only came after removing and re-adding the custom domain, which triggered provisioning.
+- [ ] **Google Search Console:** verify the domain with a DNS TXT record at OVHcloud, submit `sitemap.xml`, and request indexing for the home page.
 - [ ] **Verify the domain** on the GitHub account (Settings → Pages → Add a domain, then a TXT record at OVHcloud). This stops anyone else from claiming it.
 - [ ] Mathieu reviews the text and the privacy statement (lists above).
 - [ ] Test `info@tuinenvergotemathieu.be`. It forwards to Mathieu's Telenet address, so warn him first.
