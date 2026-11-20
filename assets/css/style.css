@@ -595,7 +595,10 @@ a { color: inherit; }
   gap: 2rem clamp(2.5rem, 2rem + 4vw, 6rem);
   align-items: start;
 }
-.tuinjaar-nu { margin-block-start: 1rem; font-size: 1.25rem; color: var(--muted); }
+.tuinjaar h1 { font-size: clamp(2.6rem, 1.6rem + 3.2vw, 4.25rem); }
+.tuinjaar-lead { margin-block-start: 1.25rem; font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem); color: var(--muted); max-inline-size: 30ch; }
+.tuinjaar-nu { margin-block-start: 1rem; font-size: 1.1rem; font-weight: 600; color: var(--mos-diep); }
+.intro .text-link { margin-block-start: 2rem; }
 .maand + .maand { margin-block-start: 3rem; } /* only matters without JS, when all months show */
 .maand-label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.6rem; margin: 0 0 0.6rem; }
 .maand-naam {

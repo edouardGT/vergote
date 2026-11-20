@@ -117,6 +117,7 @@ FOOTER = f"""<footer class="site-footer">
       <div>
         <p class="footer-name">Tuinen Vergote</p>
         <p>Tuinaanleg en tuinonderhoud in Gits en omgeving.</p>
+        <p><a href="tuinjaar.html">Nu in de tuin</a></p>
         <p class="season-greeting" hidden></p>
       </div>
       <div>
@@ -219,7 +220,7 @@ def page_head(h1, lead):
 
 
 
-def tuinjaar_section():
+def tuinjaar_section(heading="h2"):
     """'Nu in de tuin': all 12 months in the HTML (good for search engines and as no-JS fallback);
     site.js shows only the current month and lets visitors peek at others via the month strip."""
     maanden = "\n".join(
@@ -239,7 +240,8 @@ def tuinjaar_section():
   <div class="wrap">
     <div class="tuinjaar-grid">
       <div class="tuinjaar-intro">
-        <h2 id="tuinjaar-title">Nu in de tuin</h2>
+        <{heading} id="tuinjaar-title">Nu in de tuin</{heading}>
+        <p class="tuinjaar-lead">Wat er deze maand in de tuin gebeurt, en wat Mathieu voor u kan doen.</p>
         <p class="tuinjaar-nu" hidden></p>
       </div>
       <div class="tuinjaar-maanden">
@@ -289,6 +291,7 @@ home = f"""<section class="photo-hero hero">
     <div class="sprig">{SPRIG}</div>
     <h2 id="intro-title">Rust, groen en tijd voor uzelf</h2>
     <p>Een tuin is de plek waar u thuiskomt. Mathieu zorgt dat hij er mooi bij ligt: van een nieuwe aanleg tot het snoeien van hagen, bomen en struiken. Het groenafval neemt hij mee. U hoeft alleen nog te genieten.</p>
+    <a class="text-link" href="tuinjaar.html">Wat er nu in de tuin gebeurt</a>
   </div>
 </section>
 
@@ -314,8 +317,6 @@ home = f"""<section class="photo-hero hero">
     </article>
   </div>
 </section>
-
-{tuinjaar_section()}
 
 <section class="photo-hero band" aria-labelledby="band-title">
   {photo("bank-tussen-gras")}
@@ -602,6 +603,14 @@ page(
     contact=False,
 )
 
+# ---------- tuinjaar (Nu in de tuin) ----------
+page(
+    "tuinjaar.html",
+    "Nu in de tuin | Tuinen Vergote Mathieu",
+    "Wat er deze maand in de tuin gebeurt: snoeien, planten, de saffraanoogst. Een korte tuinkalender van Tuinen Vergote Mathieu uit Gits.",
+    tuinjaar_section("h1"),
+)
+
 # ---------- contact ----------
 contact = page_head(
     "Contact",
@@ -674,7 +683,7 @@ p404 = OUT / "404.html"
 t = p404.read_text(encoding="utf-8")
 for a, b in [('href="assets/', 'href="/assets/'), ('src="assets/', 'src="/assets/'), ('href="./"', 'href="/"')]:
     t = t.replace(a, b)
-for href, _ in NAV + [("privacy.html", "")]:
+for href, _ in NAV + [("privacy.html", ""), ("tuinjaar.html", "")]:
     t = t.replace(f'href="{href}"', f'href="/{href}"')
 p404.write_text(t, encoding="utf-8")
 

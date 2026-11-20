@@ -12,6 +12,7 @@ Plain HTML + CSS, no build step, served by GitHub Pages. Text is in Dutch.
 | Realisaties (photos) | `realisaties.html` |
 | Saffraan | `saffraan.html` |
 | Saffron recipes | `recepten.html` |
+| Nu in de tuin (garden year) | `tuinjaar.html` |
 | Contact | `contact.html` |
 | Privacy (GDPR) | `privacy.html` |
 | Not found | `404.html` |
@@ -54,7 +55,7 @@ The photos in `assets/img/photos/` are free Unsplash photos (Unsplash License: f
 
 ## "Nu in de tuin" (automatic, follows the month)
 
-- **Home page:** a section showing the current month and season. It has a short note on what happens in the garden now, with a link to the matching service. The section's background shifts with the season (winter cool, spring green, summer warm, autumn ochre). A month strip below lets visitors peek at other months; a dot marks today.
+- **Own page `tuinjaar.html`** (moved off the home page on 2026-11-20: "that breaks the page calmness"). Linked quietly from the home intro ("Wat er nu in de tuin gebeurt") and the footer of every page, not from the menu. It shows the current month and season. It has a short note on what happens in the garden now, with a link to the matching service. The section's background shifts with the season (winter cool, spring green, summer warm, autumn ochre). A month strip below lets visitors peek at other months; a dot marks today.
 - **Saffraan page:** one line on where the saffron is in its year ("Nu, in oktober: Oogsttijd…").
 - **Content:** `tools/tuinjaar_data.py` (12 notes plus 12 saffron lines). Checked against Flemish/Dutch garden calendars and ANB advice on hedges (not during the breeding season, roughly mid-March to mid-August). Keep each note to a title and at most two sentences.
 - All 12 months are in the HTML (for search engines, and as a fallback without JS); `site.js` shows the current one. Preview with `?maand=1` … `?maand=12`.
