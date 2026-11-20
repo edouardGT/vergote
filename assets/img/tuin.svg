@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 460">
+  <defs>
+    <g id="krokus">
+      <path d="M0 0V-38" stroke="#4E8A5B" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <path d="M-2 0C-8-12-10-24-14-34" stroke="#4E8A5B" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M2 0C8-12 10-24 14-34" stroke="#4E8A5B" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M0-36C-15-42-16-64 0-74C16-64 15-42 0-36Z" fill="#7B5BB0"/>
+      <path d="M0-37C-20-41-24-60-12-68C-8-55-5-46 0-37Z" fill="#5B3F8C"/>
+      <path d="M0-37C20-41 24-60 12-68C8-55 5-46 0-37Z" fill="#5B3F8C"/>
+      <path d="M0-46L-4-63M0-46V-66M0-46L4-63" stroke="#C2410C" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    </g>
+  </defs>
+  <circle cx="300" cy="215" r="200" fill="#E6EEE3"/>
+  <circle cx="432" cy="118" r="40" fill="#F2C76B"/>
+  <path d="M60 330C150 250 260 250 350 298S520 326 540 298V420H60Z" fill="#C9DCC3"/>
+  <rect x="168" y="214" width="16" height="118" rx="6" fill="#6B4F3A"/>
+  <circle cx="176" cy="196" r="60" fill="#2E5A3A"/>
+  <circle cx="138" cy="226" r="38" fill="#3F7A4C"/>
+  <circle cx="216" cy="228" r="40" fill="#3F7A4C"/>
+  <circle cx="160" cy="176" r="10" fill="#4E8A5B" opacity=".7"/>
+  <circle cx="198" cy="160" r="7" fill="#4E8A5B" opacity=".7"/>
+  <rect x="262" y="262" width="236" height="82" rx="22" fill="#2E5A3A"/>
+  <path d="M280 282H480" stroke="#4E8A5B" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  <path d="M290 306H470" stroke="#3F7A4C" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+  <path d="M40 350C180 318 380 318 540 350V432C380 448 180 448 40 432Z" fill="#8DB38A"/>
+  <ellipse cx="300" cy="364" rx="26" ry="8" fill="#E9E1D0"/>
+  <ellipse cx="262" cy="388" rx="28" ry="9" fill="#E9E1D0"/>
+  <ellipse cx="222" cy="414" rx="30" ry="9" fill="#E9E1D0"/>
+  <use xlink:href="#krokus" href="#krokus" transform="translate(96 418)"/>
+  <use xlink:href="#krokus" href="#krokus" transform="translate(130 430) scale(.8)"/>
+  <use xlink:href="#krokus" href="#krokus" transform="translate(70 436) scale(.7)"/>
+  <use xlink:href="#krokus" href="#krokus" transform="translate(420 420) scale(.85)"/>
+  <use xlink:href="#krokus" href="#krokus" transform="translate(456 432) scale(.7)"/>
+</svg>
