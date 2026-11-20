@@ -114,7 +114,7 @@
     var articles = section.querySelectorAll('.maand');
     var buttons = section.querySelectorAll('.maand-knop');
     var show = function (i) {
-      for (var a = 0; a < articles.length; a++) articles[a].hidden = a !== i;
+      for (var a = 0; a < articles.length; a++) articles[a].classList.toggle('is-active', a === i);
       for (var b = 0; b < buttons.length; b++) buttons[b].setAttribute('aria-pressed', String(b === i));
       section.setAttribute('data-seizoen-tuin', articles[i].getAttribute('data-seizoen'));
     };
@@ -126,6 +126,7 @@
         articles[current].querySelector('.maand-seizoen').textContent + ' in de tuin.';
       nu.hidden = false;
       section.querySelector('.maand-strip').hidden = false;
+      section.classList.add('is-ready'); // months stacked in one cell: the strip below never moves
       for (var k = 0; k < buttons.length; k++) {
         buttons[k].addEventListener('click', function () { show(Number(this.getAttribute('data-maand'))); });
       }

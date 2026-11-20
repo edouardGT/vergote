@@ -600,6 +600,10 @@ a { color: inherit; }
 .tuinjaar-nu { margin-block-start: 1rem; font-size: 1.1rem; font-weight: 600; color: var(--mos-diep); }
 .intro .text-link { margin-block-start: 2rem; }
 .maand + .maand { margin-block-start: 3rem; } /* only matters without JS, when all months show */
+/* With JS: all months share one grid cell, so the box is as tall as the longest month and the strip stays put. */
+.tuinjaar.is-ready .tuinjaar-maanden { display: grid; }
+.tuinjaar.is-ready .maand { grid-area: 1 / 1; margin: 0; visibility: hidden; }
+.tuinjaar.is-ready .maand.is-active { visibility: visible; }
 .maand-label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.6rem; margin: 0 0 0.6rem; }
 .maand-naam {
   font-family: var(--serif);
